@@ -1,1 +1,0 @@
-/usr/bin/cc -g  -rdynamic CMakeFiles/NIB.dir/main.c.o CMakeFiles/NIB.dir/nib.c.o  -o NIB 
