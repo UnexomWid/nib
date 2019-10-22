@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/Data/Programs/C/NIB/src/main.c
+nib.h
+/mnt/d/Data/Programs/C/NIB/src/nib.h
+
+/mnt/d/Data/Programs/C/NIB/src/nib.c
+nib.h
+/mnt/d/Data/Programs/C/NIB/src/nib.h
+
+/mnt/d/Data/Programs/C/NIB/src/nib.h
+ctype.h
+-
+errno.h
+-
+stdio.h
+-
+stdarg.h
+-
+stdint.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+

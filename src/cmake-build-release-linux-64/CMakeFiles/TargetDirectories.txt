@@ -1,0 +1,3 @@
+/mnt/d/Data/Programs/C/NIB/src/cmake-build-release-linux-64/CMakeFiles/rebuild_cache.dir
+/mnt/d/Data/Programs/C/NIB/src/cmake-build-release-linux-64/CMakeFiles/NIB.dir
+/mnt/d/Data/Programs/C/NIB/src/cmake-build-release-linux-64/CMakeFiles/edit_cache.dir
