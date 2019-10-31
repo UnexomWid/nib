@@ -44,3 +44,56 @@ Nibbles that start with the bit `1` are ignored, and can used for padding.
 > If you have an odd number of instructions, the last nibble should be a padding nibble.
 >
 > **Note:** The standard padding nibble is `1000`.
+
+# Interpreter
+
+The interpreter is used as follows:
+
+```shell script
+nib FILE [OPTIONS]
+```
+
+Where:
+
+* **FILE** - The file to interpret
+* **OPTIONS** - Optional interpreter options (_see below_)
+
+## Options
+
+|          Option          |                                                 Description                                                 | Default |
+|:------------------------:|:-----------------------------------------------------------------------------------------------------------:|:-------:|
+| -m, --memory-size AMOUNT | The amount of extra memory to allocate for the data array and loops stack when they run out of it, in bytes |  32768  |
+|        -s, --safe        |         Interprets safely and ignores some invalid instructions _(e.g. moving to a negative index)_         |  false  |
+
+> **Note:** safe interpretation is _slower_ than unsafe interpretation.
+>
+> However, it is useful when you need to run a script that may have runtime errors.
+>
+> By default, _unsafe_ interpretation is used.
+
+## Examples
+
+```shell script
+nib ./script.nib
+
+# Interprets the script.nib file from the current directory.
+```
+
+```shell script
+nib ./script.nib -s
+
+# Safely interprets the script.nib file from the current directory.
+```
+
+```shell script
+nib ./script.nib -m 16384
+
+# Interprets the script.nib file from the current directory, and uses a memory step size of 16384 bytes.
+```
+
+```shell script
+nib ./script.nib -m 16384 -s
+
+# Safely interprets the script.nib file from the current directory, and uses a memory step size of 16384 bytes.
+```
+
