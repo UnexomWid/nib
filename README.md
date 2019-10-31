@@ -97,3 +97,22 @@ nib ./script.nib -m 16384 -s
 # Safely interprets the script.nib file from the current directory, and uses a memory step size of 16384 bytes.
 ```
 
+## Implementation details
+
+This interpreter favors speed over memory.
+
+Here are the steps that the interpreter takes:
+
+1. The interpreter checks if the input file exists, and reads all of the contents
+2. Every input byte is split into 2 bytes, the first containing only the left nibble and the second containing only the right nibble
+    * _This results in 2 bytes, which both have the left nibble equal to `0000` and the right one equal to an instruction or padding nibble_
+3. The execution of the script starts, and all of the instructions are interpreted
+
+> **Note:** Each input byte is split into 2 bytes in order to save time.
+>
+> However, this means that the interpreter uses _two times_ more memory.
+>
+> Not splitting the input bytes uses less memory but is slower, as two masks need to be used to extract the nibbles on the fly.
+>
+> Each interpreter implementation can choose whether or not to favor time over memory.
+
