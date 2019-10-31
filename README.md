@@ -13,3 +13,34 @@ The NIB language is licensed under the [MIT](https://github.com/UnexomWid/nib/bl
 >Note: versions with the suffix **R** are considered stable releases, while those with the suffix **D** are considered unstable.
 
 None.
+
+# NIB
+
+The NIB language is similar to [BF](https://en.wikipedia.org/wiki/Brainfuck) (_i.e. they share the same instructions_).
+
+However, while BF stores instructions as characters, NIB stores them as [nibbles](https://en.wikipedia.org/wiki/Nibble).
+
+## Instructions
+
+All nibbles that start with the bit `0` are considered instructions.
+
+The table below contains all NIB instructions.
+
+|    Instruction    | BF Equivalent | Nibble |
+|:-----------------:|:-------------:|:------:|
+| INCREMENT_POINTER |       >       |  0011  |
+| DECREMENT_POINTER |       <       |  0110  |
+|  INCREMENT_VALUE  |       +       |  0010  |
+|  DECREMENT_VALUE  |       -       |  0101  |
+|    WRITE_VALUE    |       .       |  0000  |
+|     READ_VALUE    |       ,       |  0111  |
+|     LOOP_START    |       [       |  0100  |
+|      LOOP_END     |       ]       |  0001  |
+
+Nibbles that start with the bit `1` are ignored, and can used for padding.
+
+> One byte stores exactly 2 instructions.
+>
+> If you have an odd number of instructions, the last nibble should be a padding nibble.
+>
+> **Note:** The standard padding nibble is `1000`.
